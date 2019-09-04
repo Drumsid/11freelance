@@ -200,7 +200,15 @@ a {
     
 }
 
-
+.vk-coment-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.vk-coment {
+    width: 50%;
+}
 /* ........................................
 
 	FOOTER

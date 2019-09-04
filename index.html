@@ -22,7 +22,15 @@
 
     <!--  Подключение animated.css  -->
     <link rel="stylesheet" href="libs/animated.css">
-    
+
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
+
+    <script type="text/javascript">
+      VK.init({apiId: 7123968, onlyWidgets: true});
+    </script>
+
+
 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon-16x16.png">
     <!-- Yandex.Metrika counter -->
@@ -45,13 +53,16 @@
 <body>
     
 
+
+
+
 <!-- ...................................... 
 
 HEADER
 
 ...................................... -->
 <div class="header"> 
-    <div class="header__title wow animated rollIn">Денис Солодухин</div>
+    <div class="header__title wow sanimated rollIn">Денис Солодухин</div>
     <div class="header__slogan wow animated fadeInRight">Верстка сайтов на HTML и CSS<br> HTML5 CSS3 JS jQuery<br>PHP + MySQL</div>
     <div class="header__arrow">
         <i class="fa fa-chevron-down wow animated flipInX" aria-hidden="true"></i>
@@ -126,7 +137,19 @@ PORTFOLIO
     
     </div>
 </div>
+
+<div class="vk-coment-wrap">
+    <div class="vk-coment">
+        <!-- Put this div tag to the place, where the Comments block will be -->
+        <div id="vk_comments"></div>
+        <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+        </script>
     
+    </div>
+</div>
+
+
     
     
       
