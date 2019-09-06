@@ -216,7 +216,7 @@ a {
 ........................................ */
 .footer {
     background-color: #061634;
-    color: #6479a2;
+    color: #5d8fec;
     padding-top: 90px;
     padding-bottom: 190px;
 }
@@ -343,6 +343,11 @@ p.footer__social-icons a:hover {
         padding-bottom: 60px;
     }
     
+}
+@media (max-width: 850px) {
+	.vk-coment {
+		width: 96%;
+	}
 }
 
 
