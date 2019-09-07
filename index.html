@@ -163,9 +163,7 @@ PORTFOLIO
     </div>
 
 </div>
-<?php
-    print_r($_POST);
-?>
+
 <div class="container-fluid btm-form-bg">
     <div class="container">
         <div class="row btm-form-row">
@@ -175,7 +173,11 @@ PORTFOLIO
                 <div class="btm-form">
                     <form action="php/mail.php" method="POST" >
                             <!-- Hidden Required Fields -->
-                            <input type="hidden" name="project_name" value="Сайт f11">
+                            <!-- доработать форму в скрытые инпуты поставить значения записаные константами -->
+                            <?php   
+                                define('MY_SITE', 'Сайт f11');
+                            ?>
+                            <input type="hidden" name="project_name" value="<?= MY_SITE ?>">
                             <input type="hidden" name="admin_email" value="den-sidnay@yandex.ru">
                             <input type="hidden" name="email_from" value="info@checklogin.cb81630.tmweb.ru">
                             <input type="hidden" name="form_subject" value="Сообщение с сайта портфолио">
