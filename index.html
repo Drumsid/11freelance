@@ -76,9 +76,9 @@ HEADER
     
 <!-- Modal HTML embedded directly into document -->
 <div id="ex1" class="modal animated flipInX">
-  <p>Заполните форму я Вам перезвоню</p>
+  <p>Я Вам перезвоню</p>
   <form>
-  <div class="form-group">
+<!--   <div class="form-group">
     <label for="exampleInputName1">Имя</label>
     <input type="text" class="form-control" id="exampleInputName1" placeholder="Введите Имя" required>
   </div>
@@ -86,7 +86,7 @@ HEADER
     <label for="exampleInputEmail1">Email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Email" required>
     <small id="emailHelp" class="form-text text-muted">Ваш email будет в безопасности</small>
-  </div>
+  </div> -->
   <div class="form-group">
     <label for="exampleInputPhone1">Телефон</label>
     <input type="text" id="phone" class="form-control my-phone-mask" id="exampleInputPhone1" placeholder="Телефон" required>
@@ -160,6 +160,44 @@ PORTFOLIO
         <!-- // Работа в портфолио -->
     </div>
     
+    </div>
+
+</div>
+<?php
+    print_r($_POST);
+?>
+<div class="container-fluid btm-form-bg">
+    <div class="container">
+        <div class="row btm-form-row">
+            <div class="btm-form-wrap">
+                <h4 class = "btm-form-header">Обратная связь</h4>
+                <p class="btm-form-title">Заполните поля, я свяжусь с Вами</p>
+                <div class="btm-form">
+                    <form action="php/mail.php" method="POST" >
+                            <!-- Hidden Required Fields -->
+                            <input type="hidden" name="project_name" value="Сайт f11">
+                            <input type="hidden" name="admin_email" value="den-sidnay@yandex.ru">
+                            <input type="hidden" name="email_from" value="info@checklogin.cb81630.tmweb.ru">
+                            <input type="hidden" name="form_subject" value="Сообщение с сайта портфолио">
+                            <!-- END Hidden Required Fields -->
+                      <div class="form-group my-form-group">
+                        <label for="exampleInputName1">Имя</label>
+                        <input type="text" class="form-control" id="exampleInputName1" name="userName" placeholder="Введите Имя" required>
+                      </div>
+                      <div class="form-group my-form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="userEmail" aria-describedby="emailHelp" placeholder="Введите Email" required>
+                        <!-- <small id="emailHelp" class="form-text text-muted">Ваш email будет в безопасности</small> -->
+                      </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Введите сообщение</label>
+                            <textarea name="userMessage" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                      <button type="submit" class="btn button">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

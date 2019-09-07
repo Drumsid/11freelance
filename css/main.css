@@ -214,6 +214,43 @@ a {
     top: 6px;
     right: 6px;
 }
+.btm-form-bg {
+    background-color: #f3f3f350;
+    padding: 50px 0;
+    margin-bottom: 100px;
+}
+.btm-form-header {
+    font-size: 38px;
+    text-align: center;
+    font-weight: 600;  
+}
+
+.btm-form-title {
+    text-align: center;
+    
+}
+.btm-form-wrap {
+    width: 100%;
+    padding: 0 20px;
+}
+.btm-form {
+    margin: 60px 0;
+}
+.btm-form .button {
+    margin-bottom: 0;
+    background-color: #5d8fec;
+        float: right;
+}
+.btm-form .button:hover {
+    /*border: 1px solid #5d8fec;*/
+    color: #5d8fec;
+}
+.btm-form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px;
+}
 /* ........................................
 
 	FOOTER
@@ -224,6 +261,7 @@ a {
     color: #5d8fec;
     padding-top: 90px;
     padding-bottom: 190px;
+    margin-top: 50px;
 }
 
 .footer p {
