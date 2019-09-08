@@ -1,3 +1,14 @@
+<?php
+require_once 'bd/bd.php';
+require_once 'config/functions.php';
+
+$sql = "SELECT * FROM portfolio"; // create sql query
+$result = $dbLink->query($sql); // submit sql query
+$products = $result->fetchALL(PDO::FETCH_ASSOC); // Получить все строки
+
+//debug($products);
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -76,20 +87,19 @@ HEADER
     
 <!-- Modal HTML embedded directly into document -->
 <div id="ex1" class="modal animated flipInX">
-  <p>Я Вам перезвоню</p>
-  <form>
-<!--   <div class="form-group">
+  <p>Введите имя и номер, я Вам перезвоню</p>
+  <form action="php/mail.php" method="POST">
+    <input type="hidden" name="project_name" value="<?= MY_SITE ?>">
+    <input type="hidden" name="admin_email" value="den-sidnay@yandex.ru">
+    <input type="hidden" name="email_from" value="info@checklogin.cb81630.tmweb.ru">
+    <input type="hidden" name="form_subject" value="Сообщение с формы обратный звонок">
+  <div class="form-group">
     <label for="exampleInputName1">Имя</label>
-    <input type="text" class="form-control" id="exampleInputName1" placeholder="Введите Имя" required>
+    <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Введите Имя" required>
   </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Email" required>
-    <small id="emailHelp" class="form-text text-muted">Ваш email будет в безопасности</small>
-  </div> -->
-  <div class="form-group">
+ <div class="form-group">
     <label for="exampleInputPhone1">Телефон</label>
-    <input type="text" id="phone" class="form-control my-phone-mask" id="exampleInputPhone1" placeholder="Телефон" required>
+    <input type="text" id="phone" class="form-control my-phone-mask" name="phone" id="exampleInputPhone1" placeholder="Телефон" required>
   </div>
 
   <button type="submit" class="btn btn-primary">Отправить</button>
@@ -103,61 +113,33 @@ PORTFOLIO
 
 ...................................... -->
 <div class="portfolio">
-    <div class="my-container">
+    <div class="container">
     
     <div class="title wow animated bounceInDown">
         Портфолио
     </div>
         
-    <div class="my-row">
-        
+    <div class="row">
+        <?php foreach ($products as $product):?>
+
         <!-- Работа в портфолио -->
-        <div class="my-col-4">
-            <div class="portfolio-item wow animated fadeInRight">
+        <div class="col-md-4">
+            <div class="portfolio-item wow animated <?= $product['animated_css'] ?>">
                 <div class="portfolio-item__img">
-                    <img src="img/portfolio/project_organica.jpg" alt="Макет Органика">
+                    <img src="img/portfolio/<?= $product['img_link'] ?>" alt="<?= $product['img_alt'] ?>">
                 </div>
                 <div class="portfolio-item__title">
-                    <a href="work-organica.html">Макет Органика</a>
+                    <a href="<?= $product['link'] ?>"><?= $product['link_title'] ?></a>
                 </div>
                 <div class="portfolio-item__text">
-                    <p>Верстка одностраничного сайта по PSD макету.</p>
+                    <p><?= $product['description'] ?></p>
                 </div>
             </div>
         </div>
+        <?php endforeach;?>
         <!-- // Работа в портфолио -->
         
-        <!-- Работа в портфолио -->
-        <div class="my-col-4">
-            <div class="portfolio-item wow animated zoomIn">
-                <div class="portfolio-item__img">
-                    <img src="img/portfolio/project_apollo.jpg" alt="Учебный макет Аполло">
-                </div>
-                <div class="portfolio-item__title">
-                    <a href="work-apollo.html">Учебный макет Аполло</a>
-                </div>
-                <div class="portfolio-item__text">
-                    <p>Верстка лендинга хостинг компании. Мобильная адаптивность.</p>
-                </div>
-            </div>
-        </div>
-        <!-- // Работа в портфолио -->
-        
-        <!-- Работа в портфолио -->
-        <div class="my-col-4">
-            <div class="portfolio-item wow animated fadeInLeft">
-                <div class="portfolio-item__img">
-                    <img src="img/portfolio/project_portfolio.jpg" alt="Личный сайт портфолио">
-                </div>
-                <div class="portfolio-item__title">
-                    <a href="work-portfolio.html">Личный сайт портфолио</a>
-                </div>
-                <div class="portfolio-item__text">
-                    <p>Верстка личного сайта портфолио на котором вы сейчас находитесь.</p>
-                </div>
-            </div>
-        </div>
-        <!-- // Работа в портфолио -->
+ 
     </div>
     
     </div>

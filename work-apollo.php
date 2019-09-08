@@ -27,7 +27,7 @@
 <div class="portfolio-sigle-page">
     <div class="my-container">
         <img src="img/portfolio/big/site-apollo.jpg" alt="Макет Аполло">
-        <a href="index.html" class="button-back">&larr; Вернуться на главную</a>
+        <a href="index.php" class="button-back">&larr; Вернуться на главную</a>
     </div>
 </div>
 <div class="vk-coment-wrap">
