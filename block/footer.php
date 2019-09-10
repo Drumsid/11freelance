@@ -66,6 +66,8 @@ VK.Widgets.CommunityMessages("vk_community_messages", 156004772, {expandTimeout:
 
 <script src="js/wow.min.js"></script>
 
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -73,6 +75,8 @@ VK.Widgets.CommunityMessages("vk_community_messages", 156004772, {expandTimeout:
 
 <!-- jQuery Modal -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<!-- from resume -->
+<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script>    -->
 <!-- Mask jQuery mask -->
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="js/myJs.js"></script>
@@ -84,10 +88,14 @@ $(function(){
   $("#phone").mask("8(999) 999-9999");
 });
 </script>
+<!-- from resome без него не работает main.js -->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+<!-- custom js from resume -->
+<script type="text/javascript" src="js/main.js"></script>   
 
     
 
-    
-    <script src="js/myWow.js"></script>
+<script src="js/myWow.js"></script>
 </body>
 </html>

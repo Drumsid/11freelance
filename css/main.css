@@ -149,8 +149,33 @@ a {
     margin-top: 0px;
     margin-bottom: 15px;
 }
-
-
+.my-nav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    margin-bottom: 55px;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #5d8fec;
+    background-color: #fff;
+}
+.my-link {
+    color: #0b05ff;
+    text-decoration: underline;
+    font-size: 18px;
+    
+}
+.portfolio-top-prgph {
+    margin-bottom: 30px;
+}
+.my-portfolio-card {
+    margin-bottom: 50px;
+}
 /* ........................................
 
 	PORTFOLIO SINGLE PAGE

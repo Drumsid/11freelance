@@ -5,9 +5,27 @@ require_once 'config/functions.php';
 $sql = "SELECT * FROM portfolio"; // create sql query
 $result = $dbLink->query($sql); // submit sql query
 $products = $result->fetchALL(PDO::FETCH_ASSOC); // Получить все строки
+// portfolio db
+$aboutData = $dbLink->query("SELECT * FROM about");
+$aboutData = $aboutData->fetch();
 
-//debug($products);
+$educationData = $dbLink->query("SELECT * FROM education");
 
+$languagesData = $dbLink->query("SELECT * FROM languages");
+$languagesData = $languagesData->fetchAll();
+
+$interestsData = $dbLink->query("SELECT * FROM interests");
+$interestsData = $interestsData->fetchAll();
+
+$experiencesData = $dbLink->query("SELECT * FROM experiences");
+$experiencesData = $experiencesData->fetchAll();
+
+$projectsData = $dbLink->query("SELECT * FROM projects");
+$projectsData = $projectsData->fetchAll();
+
+$skillsData = $dbLink->query("SELECT * FROM skills");
+$skillsData = $skillsData->fetchAll();
+// portfolio db
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -28,11 +46,24 @@ $products = $result->fetchALL(PDO::FETCH_ASSOC); // Получить все ст
     <!--  Подключение веб-шрифтов  -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption:400,700" rel="stylesheet"> 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <!-- fonts from resume -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    
+        <!-- Plugins CSS from resume -->
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
+    
     <!--  Подключение animated.css  -->
     <link rel="stylesheet" href="libs/animated.css">
     <!-- Modal CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+        <!-- Theme CSS from resume-->  
+    <link id="theme-style" rel="stylesheet" href="css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
         <!-- Собственные стили -->
     <link rel="stylesheet" href="css/main.css">
