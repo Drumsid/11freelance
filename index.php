@@ -1,5 +1,8 @@
+<?php ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL); ?>
+<?php //phpinfo(); ?>
 <?php require_once 'block/header.php';?>
-<!-- ...................................... 
+<!-- ......................................
 
 PORTFOLIO
 
@@ -7,7 +10,7 @@ PORTFOLIO
 <!-- Портфолио -->
 <div class="portfolio">
     <div class="container">
-    
+
 
     <ul class="nav nav-pills my-nav" id="pills-tab" role="tablist">
       <li class="nav-item">
@@ -51,7 +54,7 @@ PORTFOLIO
                 <h1 class="name"><?= $aboutData['name']?></h1>
                 <h3 class="tagline"><?= $aboutData['job']?></h3>
             </div><!--//profile-container-->
-            
+
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
                     <li class="email"><i class="fa fa-envelope"></i><a href="mailto: <?= $aboutData['email']?>"><?= $aboutData['email']?></a></li>
@@ -74,7 +77,7 @@ PORTFOLIO
                     </div><!--//item-->
                 <?php endforeach; ?>
             </div><!--//education-container-->
-            
+
             <div class="languages-container container-block">
                 <h2 class="container-block-title">Languages</h2>
                 <ul class="list-unstyled interests-list">
@@ -83,7 +86,7 @@ PORTFOLIO
                     <?php endforeach;?>
                 </ul>
             </div><!--//interests-->
-            
+
             <div class="interests-container container-block">
                 <h2 class="container-block-title">Interests</h2>
                 <ul class="list-unstyled interests-list">
@@ -94,19 +97,19 @@ PORTFOLIO
             </div><!--//interests-->
             <p class = "gitPage">this page on  <a href="<?= $aboutData['githubLink']?>" target="_blank">github</a></p>
         </div><!--//sidebar-wrapper-->
-        
+
         <div class="main-wrapper">
-            
+
             <section class="section summary-section">
                 <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
                 <div class="summary">
                     <p>I am actively keen on and practicing web development, strenuously delving into the knowledge of PHP in both procedural and object oriented programming style. I also study the framework Yii2. I also tried to make this page on the basis of php and using databases.</p>
                 </div><!--//summary-->
             </section><!--//section-->
-            
+
             <section class="section experiences-section">
                 <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-                
+
                 <div class="item">
                     <?php foreach ($experiencesData as $job): ?>
                     <div class="meta">
@@ -123,42 +126,42 @@ PORTFOLIO
                 <?php endforeach;?>
                 </div><!--//item-->
 
-                
+
             </section><!--//section-->
-            
+
             <section class="section projects-section">
                 <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
                 <div class="intro">
                     <p>All my projects are mainly on gitHub and you can see them there. Here is the link. <a href="<?= $aboutData['githubLink']?>" target="_blank">github</a> Or by clicking on some links separately even lower.</p>
-                    
+
                 </div><!--//intro-->
                 <?php foreach ($projectsData as $project) : ?>
                 <div class="item">
                     <span class="project-title"><a href="<?= $project['projectLink']?>"><?= $project['projectTitle']?></a></span> - <span class="project-tagline"><?= $project['projectDescription']?></span>
-                    
+
                 </div>
                 <hr style="width: 10%; text-align: left; margin: 20px 0;">
                 <?php endforeach; ?>
 
-               
+
 
             </section><!--//section-->
-            
+
             <section class="skills-section section">
                 <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
-                <div class="skillset">  
-                <?php foreach ($skillsData as $skill) : ?>      
+                <div class="skillset">
+                <?php foreach ($skillsData as $skill) : ?>
                     <div class="item">
                         <h3 class="level-title"><?= $skill['scillTitle']?></h3>
                         <div class="level-bar">
                             <div class="level-bar-inner" data-level="<?= $skill['scillLevel']?>">
-                            </div>                                      
-                        </div><!--//level-bar-->                                 
+                            </div>
+                        </div><!--//level-bar-->
                     </div><!--//item-->
                     <?php endforeach; ?>
-                  
-                    
-                </div>  
+
+
+                </div>
             </section><!--//skills-section-->
 
 
@@ -175,9 +178,9 @@ PORTFOLIO
    <!--  <div class="title wow animated bounceInDown">
         Портфолио
     </div> -->
-        
 
-    
+
+
     </div>
 </div>
 <!-- Портфолио -->
@@ -193,7 +196,7 @@ PORTFOLIO
                     <form action="php/mail.php" method="POST" >
                             <!-- Hidden Required Fields -->
                             <!-- доработать форму в скрытые инпуты поставить значения записаные константами -->
-                            <?php   
+                            <?php
                                 define('MY_SITE', 'Сайт f11');
                             ?>
                             <input type="hidden" name="project_name" value="<?= MY_SITE ?>">
@@ -223,8 +226,3 @@ PORTFOLIO
 </div>
 <!-- Обратная связь -->
 <?php require_once 'block/footer.php';?>
-
-
-
-
-
